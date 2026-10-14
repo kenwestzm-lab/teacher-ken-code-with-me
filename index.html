@@ -174,7 +174,7 @@ async function run(){
 }
 $('run').onclick=run;
 $('musicBtn').onclick=toggleMusic;$('soundBtn').onclick=toggleSounds;updateAudioButtons();
-function tryLandscapeLock(){try{if(screen.orientation&&screen.orientation.lock)screen.orientation.lock('landscape').catch(()=>{})}catch(e){}}
+function tryLandscapeLock(){try{if(screen.orientation&&screen.orientation.lock){const p=screen.orientation.lock('landscape');if(p&&p.catch)p.catch(()=>{})}}catch(e){}}
 tryLandscapeLock();window.addEventListener('load',tryLandscapeLock,{once:true});
 document.addEventListener('pointerdown',()=>{tryLandscapeLock();if(musicOn&&!musicTimer)startMusic()},{once:true});
 $('songPicker').addEventListener('change',setSong);document.querySelectorAll('#palette .block').forEach(b=>{b.onclick=()=>add(b.dataset.t);b.draggable=true;b.addEventListener('dragstart',e=>e.dataTransfer.setData('text/plain',b.dataset.t))});
@@ -300,7 +300,6 @@ if('serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.s
   if(window.ResizeObserver)new ResizeObserver(resize).observe(stage);else window.addEventListener('resize',resize);resize();
   buildWorld($('bg')?.value||'');setCharacter($('hero')?.textContent||'🐱');stage.classList.add('has-3d');badge.textContent='3D ADVENTURE • READY';window.TK3D={setWorld,setCharacter,action};
   $('bg').onchange=()=>{stage.className='stage '+$('bg').value;stage.classList.add('has-3d');setWorld($('bg').value)};
-  $('chars').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>setCharacter(b.dataset.c)));
   const reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function animate(){requestAnimationFrame(animate);const dt=clock.getDelta(),t=clock.elapsedTime,now=performance.now();
    if(actor){if(actionEnd<now&&actionName!=='idle'){actionName='idle';if(colourMode){actorMaterials.forEach((m,i)=>m.color.copy(originalColors[i]||new T.Color('#ffffff')));colourMode=false}actor.scale.setScalar(baseScale)}
