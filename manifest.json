@@ -1,0 +1,11 @@
+{
+  "name": "TEACHER KEN CODE WITH ME",
+  "short_name": "Ken Code",
+  "description": "Offline-friendly coding playground for young learners",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4f2ff",
+  "theme_color": "#7657e8",
+  "orientation": "any",
+  "icons": []
+}
