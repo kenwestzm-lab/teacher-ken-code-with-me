@@ -1,7 +1,7 @@
 {
   "name": "TEACHER KEN CODE WITH ME",
   "short_name": "Ken Code",
-  "description": "A colourful landscape coding playground for children with animated characters, happy game music, funny sounds and original school photos.",
+  "description": "A landscape coding playground for children with animated characters, music and real school photos.",
   "start_url": "./index.html",
   "display": "standalone",
   "orientation": "landscape",
