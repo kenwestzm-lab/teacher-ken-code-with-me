@@ -25,7 +25,7 @@
 @keyframes fly3d{0%,100%{transform:rotateY(-15deg) rotateX(4deg)}50%{transform:rotateY(18deg) rotateX(-12deg) scale(1.08)}}
 @keyframes heartBurst{0%{transform:translateY(10px) scale(.4);opacity:0}25%{opacity:1}100%{transform:translateY(-70px) scale(1.25);opacity:0}}
 .effect-burst{position:absolute;left:28%;top:20%;font-size:clamp(24px,4vw,42px);z-index:5;pointer-events:none;white-space:nowrap;animation:heartBurst 1.2s ease-out forwards;filter:drop-shadow(0 4px 3px #0002)}
-.block.back{background:#6474d9}.block.wave{background:#ff8f55;color:#512200}.block.hideblock{background:#7c859f}.block.showblock{background:#2eb7a3}.block.fly{background:#438be9}.block.heart{background:#fa78ad;color:#5b1232}.block.shrink{background:#b17de8}.block.colorburst{background:#df70d6}.block.cheer{background:#ffc64e;color:#593e00}
+.block.back{background:#6474d9}.block.runfast{background:#ff704f}.code.runfast{background:#ff704f}.block.wave{background:#ff8f55;color:#512200}.block.hideblock{background:#7c859f}.block.showblock{background:#2eb7a3}.block.fly{background:#438be9}.block.heart{background:#fa78ad;color:#5b1232}.block.shrink{background:#b17de8}.block.colorburst{background:#df70d6}.block.cheer{background:#ffc64e;color:#593e00}
 .code.back{background:#6474d9}.code.wave{background:#ff8f55;color:#512200}.code.hideblock{background:#7c859f}.code.showblock{background:#2eb7a3}.code.fly{background:#438be9}.code.heart{background:#fa78ad;color:#5b1232}.code.shrink{background:#b17de8}.code.colorburst{background:#df70d6}.code.cheer{background:#ffc64e;color:#593e00}
 #musicBtn[aria-pressed="true"]{background:#d9f8ec;color:#07513b}#soundBtn[aria-pressed="false"]{background:#ececf3;color:#686b80}
 #rotateNotice{display:none;position:fixed;inset:0;z-index:9999;align-items:center;justify-content:center;padding:22px;background:linear-gradient(140deg,#7662e9,#f47cae 55%,#ffc85b);text-align:center;color:#30254f}
@@ -92,9 +92,9 @@ body{overflow-x:hidden;overflow-y:auto}
 }
 
 </style></head><body>
-<header><div class="brand"><div class="logo photo-logo"><img src="images/1000480462.jpg" alt="Teacher Ken Code With Me profile picture"></div><div>TEACHER KEN CODE WITH ME<small>PLAY • CREATE • LEARN</small><small style="color:#7657e8;letter-spacing:.3px">A PEACE MINDSET PRIVATE SCHOOL PROJECT</small></div></div><div class="actions"><button class="soft" id="musicBtn" aria-pressed="true">🎵 Music: ON</button><button class="soft" id="soundBtn" aria-pressed="true">🔊 Sounds: ON</button><button class="soft" id="new">＋ New</button><button class="soft" id="reset">↺ Reset</button><button class="go" id="run">▶ Run code!</button></div></header>
+<header><div class="brand"><div class="logo photo-logo"><img src="images/1000480462.jpg" alt="Teacher Ken Code With Me profile picture"></div><div>TEACHER KEN CODE WITH ME<small>PLAY • CREATE • LEARN</small><small style="color:#7657e8;letter-spacing:.3px">A PEACE MINDSET PRIVATE SCHOOL PROJECT</small></div></div><div class="actions"><button class="soft" id="musicBtn" aria-pressed="true">🎵 Music: ON</button><button class="soft" id="soundBtn" aria-pressed="true">🔊 Sounds: ON</button><button class="soft" id="new">＋ New</button><button class="soft" id="reset">↺ Reset</button><button class="soft" id="stop" disabled>■ Stop</button><button class="go" id="run">▶ Run code!</button></div></header>
 <main class="layout"><section class="panel"><h2>🎨 Coding blocks</h2><div class="palette" id="palette">
-<div class="block move" data-t="move"><span>➡️</span>Move steps</div><div class="block turn" data-t="turn"><span>🔄</span>Turn around</div><div class="block jump" data-t="jump"><span>⬆️</span>Jump</div><div class="block say" data-t="say"><span>💬</span>Say something</div><div class="block wait" data-t="wait"><span>⏳</span>Wait</div><div class="block grow" data-t="grow"><span>✨</span>Grow big</div><div class="block loop" data-t="loop"><span>🔁</span>Repeat times</div><div class="block if" data-t="if"><span>🤔</span>If at edge</div><div class="block sound" data-t="sound"><span>🎵</span>Play sound</div><div class="block dance" data-t="dance"><span>🕺</span>Funny dance</div><div class="block spin" data-t="spin"><span>🌪️</span>Spin around</div><div class="block confetti" data-t="party"><span>🎉</span>Party time!</div><div class="block rainbow" data-t="rainbow"><span>🌈</span>Rainbow power</div><div class="block back" data-t="back"><span>⬅️</span>Move backwards</div><div class="block wave" data-t="wave"><span>👋</span>Wave hello</div><div class="block hideblock" data-t="hide"><span>🫣</span>Hide character</div><div class="block showblock" data-t="show"><span>👀</span>Show character</div><div class="block fly" data-t="fly"><span>🪽</span>Fly up</div><div class="block heart" data-t="heart"><span>💖</span>Heart burst</div><div class="block shrink" data-t="shrink"><span>🐜</span>Make tiny</div><div class="block colorburst" data-t="color"><span>🎨</span>Colour magic</div><div class="block cheer" data-t="cheer"><span>👏</span>Big cheer</div></div><p class="hint">Tap a block to add it. Drag blocks to reorder. Change words or numbers in the small boxes. No typing is needed for most activities.</p><hr style="border:0;border-top:1px solid #eee9ff"><h2>🐾 Choose a character</h2><div class="row" id="chars"><button class="soft" data-c="🐱">🐱</button><button class="soft" data-c="🐶">🐶</button><button class="soft" data-c="🤖">🤖</button><button class="soft" data-c="🚗">🚗</button><button class="soft" data-c="🧑🏾‍🚀">🧑🏾‍🚀</button><button class="soft" data-c="👦🏿">👦🏿</button><button class="soft" data-c="👧🏽">👧🏽</button><button class="soft" data-c="🧑🏽‍🎓">🧑🏽‍🎓</button><button class="soft" data-c="🐸">🐸</button><button class="soft" data-c="🦁">🦁</button><button class="soft" data-c="🐵">🐵</button><button class="soft" data-c="🦖">🦖</button><button class="soft" data-c="🦄">🦄</button><button class="soft" data-c="🐧">🐧</button><button class="soft" data-c="🐔">🐔</button><button class="soft" data-c="🛸">🛸</button></div></section>
+<div class="block move" data-t="move"><span>➡️</span>Move steps</div><div class="block turn" data-t="turn"><span>🔄</span>Turn around</div><div class="block jump" data-t="jump"><span>⬆️</span>Jump</div><div class="block say" data-t="say"><span>💬</span>Say something</div><div class="block wait" data-t="wait"><span>⏳</span>Wait</div><div class="block grow" data-t="grow"><span>✨</span>Grow big</div><div class="block loop" data-t="loop"><span>🔁</span>Repeat times</div><div class="block if" data-t="if"><span>🤔</span>If at edge</div><div class="block sound" data-t="sound"><span>🎵</span>Play sound</div><div class="block dance" data-t="dance"><span>🕺</span>Funny dance</div><div class="block spin" data-t="spin"><span>🌪️</span>Spin around</div><div class="block confetti" data-t="party"><span>🎉</span>Party time!</div><div class="block rainbow" data-t="rainbow"><span>🌈</span>Rainbow power</div><div class="block back" data-t="back"><span>⬅️</span>Move backwards</div><div class="block runfast" data-t="runfast"><span>🏃</span>Run fast</div><div class="block wave" data-t="wave"><span>👋</span>Wave hello</div><div class="block hideblock" data-t="hide"><span>🫣</span>Hide character</div><div class="block showblock" data-t="show"><span>👀</span>Show character</div><div class="block fly" data-t="fly"><span>🪽</span>Fly up</div><div class="block heart" data-t="heart"><span>💖</span>Heart burst</div><div class="block shrink" data-t="shrink"><span>🐜</span>Make tiny</div><div class="block colorburst" data-t="color"><span>🎨</span>Colour magic</div><div class="block cheer" data-t="cheer"><span>👏</span>Big cheer</div></div><p class="hint">Tap a block to add it. Drag blocks to reorder. Change words or numbers in the small boxes. No typing is needed for most activities.</p><hr style="border:0;border-top:1px solid #eee9ff"><h2>🐾 Choose a character</h2><div class="row" id="chars"><button class="soft" data-c="🐱">🐱</button><button class="soft" data-c="🐶">🐶</button><button class="soft" data-c="🤖">🤖</button><button class="soft" data-c="🚗">🚗</button><button class="soft" data-c="🧑🏾‍🚀">🧑🏾‍🚀</button><button class="soft" data-c="👦🏿">👦🏿</button><button class="soft" data-c="👧🏽">👧🏽</button><button class="soft" data-c="🧑🏽‍🎓">🧑🏽‍🎓</button><button class="soft" data-c="🐸">🐸</button><button class="soft" data-c="🦁">🦁</button><button class="soft" data-c="🐵">🐵</button><button class="soft" data-c="🦖">🦖</button><button class="soft" data-c="🦄">🦄</button><button class="soft" data-c="🐧">🐧</button><button class="soft" data-c="🐔">🐔</button><button class="soft" data-c="🛸">🛸</button></div></section>
 <section class="center"><div class="panel"><h2>🌈 Your play world</h2><div class="row"><label>WORLD</label><select id="bg"><option value="">Sunny garden</option><option value="forest">Forest</option><option value="classroom">Classroom</option><option value="space">Outer space</option><option value="beach">Silly beach</option><option value="candy">Candy land</option><option value="night">Starry night</option><option value="underwater">Under the sea</option><option value="school">School playground</option><option value="farm">Sunny farm</option><option value="safari">African safari</option><option value="city">Busy city</option><option value="snow">Snowy mountains</option><option value="volcano">Volcano island</option></select><label>SONG</label><select id="songPicker" aria-label="Choose a children’s song"><option value="twinkle">Twinkle, Twinkle</option><option value="mary">Mary Had a Little Lamb</option><option value="rowboat">Row, Row, Row Your Boat</option><option value="oldmac">Old MacDonald</option><option value="frere">Frère Jacques</option></select><label>PROJECT</label><input id="name" value="My first story" maxlength="45" style="flex:1;width:90px"></div><div class="stage" id="stage"><div class="sun"></div><div class="cloud">☁️</div><div class="hill l"></div><div class="hill r"></div><div id="hero">🐱</div><div id="stageText">Ready, little coder!</div><div id="stage3dBadge">3D ADVENTURE LOADING…</div></div><div class="mission"><b id="mt">⭐ Your first challenge</b><p id="md">Make your character move, jump and say hello. Then press Run code!</p></div><div class="school-feature"><h3>😄 The Peace Mindset Code Crew</h3><img src="images/1000475327.png" alt="Unedited school group photograph of Peace Mindset Private School pupils" loading="lazy"><p>Real school moments to cheer you on while you build your very first code. 👋</p></div></div><div class="panel"><h2>💾 Save your work</h2><div class="row"><button class="go" id="save">Save project</button><button class="soft" id="export">Export</button><button class="soft" id="import">Import</button><input id="file" type="file" accept=".json" hidden></div><p class="hint">Projects save on this device. Export a backup to move work to another device.</p></div></section>
 <section class="panel right"><div class="tabs"><button class="tab active" data-tab="program">🧱 My code</button><button class="tab" data-tab="lessons">⭐ Lessons</button><button class="tab" data-tab="projects">📁 Projects</button><button class="tab" data-tab="teacher">👩‍🏫 Teacher</button><button class="tab" data-tab="gallery">📸 Our School</button></div>
 <div class="section active" id="program"><h2>My program <span id="count" style="float:right;color:#9690b5;font-size:11px">0 blocks</span></h2><div class="workspace" id="ws"><div class="empty" id="empty">👇<br>Your code goes here!<br>Tap a colourful block to begin.</div></div><div class="row" style="margin-top:8px"><button class="soft" id="clear">Clear blocks</button><span class="hint">Runs from top to bottom.</span></div><div class="page-photo"><h3>🙌 Your coding team says: keep trying!</h3><img src="images/1000480462.jpg" alt="Unedited portrait photograph of pupils at Peace Mindset Private School" loading="lazy"><p>Try a funny dance block, then see if you can make your character jump too. 😄</p></div></div>
@@ -111,8 +111,8 @@ body{overflow-x:hidden;overflow-y:auto}
 <div class="school-card"><img src="images/1000475326.png" alt="Original school group photograph 8" loading="eager"><h3>🌈 Our school, our team</h3><p>Play, create, learn, and cheer each other on.</p></div>
 </div></div></section></main><div class="footer">TEACHER KEN CODE WITH ME • Made with care by PEACE MINDSET PRIVATE SCHOOL • Play, create, learn!</div><div class="toast" id="toast"></div>
 <script>
-const $=id=>document.getElementById(id), meta={move:['➡️','Move steps','move','1'],back:['⬅️','Move backwards','back','1'],turn:['🔄','Turn around','turn'],jump:['⬆️','Jump','jump'],say:['💬','Say','say','Hello, friend!'],wait:['⏳','Wait seconds','wait','1'],grow:['✨','Grow big','grow'],shrink:['🐜','Make tiny','shrink'],loop:['🔁','Repeat times','loop','3'],if:['🤔','If at edge, turn','if'],sound:['🎵','Play a sound','sound'],dance:['🕺','Funny dance','dance'],spin:['🌪️','Spin around','spin'],party:['🎉','Party time!','confetti'],rainbow:['🌈','Rainbow power','rainbow'],wave:['👋','Wave hello','wave'],hide:['🫣','Hide character','hideblock'],show:['👀','Show character','showblock'],fly:['🪽','Fly up','fly'],heart:['💖','Heart burst','heart'],color:['🎨','Colour magic','colorburst'],cheer:['👏','Big cheer','cheer']};
-let running=false,seq=1,pos=42,dir=1,char='🐱',done=JSON.parse(localStorage.getItem('tkcm_done')||'[]');
+const $=id=>document.getElementById(id), meta={move:['➡️','Move steps','move','1'],back:['⬅️','Move backwards','back','1'],runfast:['🏃','Run fast','runfast','2'],turn:['🔄','Turn around','turn'],jump:['⬆️','Jump','jump'],say:['💬','Say','say','Hello, friend!'],wait:['⏳','Wait seconds','wait','1'],grow:['✨','Grow big','grow'],shrink:['🐜','Make tiny','shrink'],loop:['🔁','Repeat times','loop','3'],if:['🤔','If at edge, turn','if'],sound:['🎵','Play a sound','sound'],dance:['🕺','Funny dance','dance'],spin:['🌪️','Spin around','spin'],party:['🎉','Party time!','confetti'],rainbow:['🌈','Rainbow power','rainbow'],wave:['👋','Wave hello','wave'],hide:['🫣','Hide character','hideblock'],show:['👀','Show character','showblock'],fly:['🪽','Fly up','fly'],heart:['💖','Heart burst','heart'],color:['🎨','Colour magic','colorburst'],cheer:['👏','Big cheer','cheer']};
+let running=false,currentRunController=null,seq=1,pos=42,dir=1,char='🐱',done=JSON.parse(localStorage.getItem('tkcm_done')||'[]');
 const lessons=[['Move your character','Add a Move steps block and run it.','move'],['Make a jump','Add a Jump block and watch the character hop.','jump'],['Say hello','Change the words in a Say block.','say'],['Repeat an action','Use Repeat times to practise a loop.','loop'],['Play a sound','Add a sound block and listen.','sound'],['Try a condition','Use If at edge to practise simple logic.','if']];
 function toast(s){$('toast').textContent=s;$('toast').style.display='block';clearTimeout(toast.t);toast.t=setTimeout(()=>$('toast').style.display='none',2200)}
 function safe(s){return String(s).replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;')}
@@ -121,7 +121,7 @@ function update(){let n=blocks().length;$('count').textContent=n+' blocks';$('sb
 function add(t,v){if(running)return;let m=meta[t];if(!m)return;$('empty')?.remove();let e=document.createElement('div');e.className='code '+m[2];e.dataset.t=t;e.dataset.id=seq++;let s=`<span>${m[0]}</span><span>${m[1]}</span>`;if(m.length===4)s+=`<input aria-label="${m[1]}" ${t==='say'?'maxlength="80"':'type="number" min="1" max="10"'} value="${safe(v??m[3])}">`;s+='<button class="remove">×</button>';e.innerHTML=s;e.draggable=true;e.querySelector('.remove').onclick=()=>{if(!running){e.remove();update()}};e.addEventListener('dragstart',ev=>{ev.dataTransfer.setData('block-id',e.dataset.id);ev.dataTransfer.setData('text/plain',t)});e.addEventListener('dragover',ev=>ev.preventDefault());e.addEventListener('drop',ev=>{ev.preventDefault();let id=ev.dataTransfer.getData('block-id'),moving=$('ws').querySelector(`[data-id="${id}"]`);if(moving&&moving!==e)$('ws').insertBefore(moving,e)});$('ws').appendChild(e);update()}
 function data(){return {name:$('name').value||'My project',char,bg:$('bg').value,blocks:blocks().map(e=>({t:e.dataset.t,v:e.querySelector('input')?.value}))}}
 function load(p){$('ws').innerHTML='';$('name').value=p.name||'My project';char=p.char||'🐱';$('hero').textContent=char;$('bg').value=p.bg||'';$('stage').className='stage '+$('bg').value;(p.blocks||[]).forEach(b=>add(b.t,b.v));$('stageText').textContent='Project loaded!'}
-const sleep=n=>new Promise(r=>setTimeout(r,n));
+function sleep(n,signal=currentRunController?.signal){return new Promise(resolve=>{let timer;const finish=()=>{clearTimeout(timer);if(signal)signal.removeEventListener('abort',finish);resolve()};timer=setTimeout(finish,n);if(signal){if(signal.aborted)finish();else signal.addEventListener('abort',finish,{once:true})}})}
 let audioCtx=null,musicTimer=null,musicStep=0,musicOn=localStorage.getItem('tkcm_music')!=='off',soundOn=localStorage.getItem('tkcm_sfx')!=='off';
 
 const songLibrary={
@@ -149,39 +149,65 @@ function toggleSounds(){soundOn=!soundOn;localStorage.setItem('tkcm_sfx',soundOn
 function beepLegacy(){beep('pop')}
 async function run(){
  if(running)return;
- let list=blocks();if(!list.length){beep('tap');return toast('Add a block first! 👇')}
- running=true;startMusic();$('run').textContent='Running…';pos=42;dir=1;
+ const list=blocks();
+ if(!list.length){beep('tap');return toast('Add a block first! 👇')}
+ if(list.length>250)return toast('This project has 250 blocks. Split it into smaller projects for smoother play.');
+ running=true;
+ const controller=new AbortController(),signal=controller.signal,currentAtStart=Date.now();
+ currentRunController=controller;
+ $('run').textContent='Running…';$('run').disabled=true;$('stop').disabled=false;
+ startMusic();pos=42;dir=1;
  $('hero').style.left=pos+'%';$('hero').style.bottom='25%';$('hero').style.fontSize='';$('hero').style.opacity='1';$('hero').style.filter='';$('hero').style.transform='scaleX(1)';$('hero').textContent=char;
- for(let i=0;i<list.length;i++){
-  let e=list[i],t=e.dataset.t,v=e.querySelector('input')?.value||'',times=t==='loop'?Math.min(10,Math.max(1,+v||3)):1;
-  e.style.outline='3px solid #ffd45c';$('stageText').textContent=`Instruction ${i+1} of ${list.length}`;
-  for(let j=0;j<times;j++){window.TK3D?.action(t,v);
-   if(t==='move'){pos=Math.max(5,Math.min(85,pos+dir*(+v||1)*8));$('hero').style.left=pos+'%';$('hero').style.transform=dir===1?'scaleX(1)':'scaleX(-1)';await sleep(300)}
-   else if(t==='back'){pos=Math.max(5,Math.min(85,pos-dir*(+v||1)*8));$('hero').style.left=pos+'%';$('hero').style.transform=dir===1?'scaleX(1)':'scaleX(-1)';await sleep(300)}
-   else if(t==='turn'){dir*=-1;$('hero').style.transform=dir===1?'scaleX(1)':'scaleX(-1)';await sleep(300)}
-   else if(t==='jump'){beep('jump');$('hero').style.bottom='48%';await sleep(250);$('hero').style.bottom='25%';await sleep(250)}
-   else if(t==='say'){$('speech')?.remove();let b=document.createElement('div');b.id='speech';b.className='speech';b.textContent=v||'Hello!';$('stage').appendChild(b);beep('pop');await sleep(900);b.remove()}
-   else if(t==='wait')await sleep(Math.min(5,+v||1)*400)
-   else if(t==='grow'){$('hero').style.fontSize='100px';await sleep(400)}
-   else if(t==='shrink'){$('hero').style.fontSize='36px';await sleep(500)}
-   else if(t==='sound'){beep('funny');await sleep(250)}
-   else if(t==='dance'){$('hero').style.animation='wiggle .45s ease-in-out 3';beep('funny');await sleep(1400);$('hero').style.animation=''}
-   else if(t==='wave'){$('hero').style.animation='wave3d .5s ease-in-out 3';beep('funny');await sleep(1500);$('hero').style.animation=''}
-   else if(t==='spin'){$('hero').style.animation='spinny 1s ease-in-out';beep('funny');await sleep(1000);$('hero').style.animation=''}
-   else if(t==='party'||t==='cheer'){beep('party');$('stageText').textContent=t==='cheer'?'WOW! YOU DID IT! 👏🎉':'PARTY TIME!!! 🎉';$('hero').style.animation='wiggle .45s ease-in-out 3';await sleep(1400);$('hero').style.animation=''}
-   else if(t==='rainbow'){$('stage').style.animation='rainbowflash 1s ease-in-out 3';beep('party');await sleep(3000);$('stage').style.animation=''}
-   else if(t==='if'){dir=pos>75?-1:pos<10?1:-dir;pos=Math.max(12,Math.min(78,pos));$('hero').style.left=pos+'%';$('hero').style.transform=dir===1?'scaleX(1)':'scaleX(-1)';await sleep(300)}
-   else if(t==='hide'){$('hero').style.opacity='0';$('stageText').textContent='Where did my friend go? 🫣';await sleep(600)}
-   else if(t==='show'){$('hero').style.opacity='1';$('stageText').textContent='Peekaboo! Here I am! 👀';beep('pop');await sleep(600)}
-   else if(t==='fly'){$('hero').style.bottom='62%';$('hero').style.animation='fly3d .6s ease-in-out 2';beep('jump');await sleep(1200);$('hero').style.bottom='25%';$('hero').style.animation=''}
-   else if(t==='heart'){let b=document.createElement('div');b.className='effect-burst';b.textContent='💖 💛 💙';$('stage').appendChild(b);beep('win');await sleep(1100);b.remove()}
-   else if(t==='color'){$('hero').style.filter='hue-rotate(170deg) drop-shadow(0 10px 3px #1d254c45)';beep('funny');await sleep(800);$('hero').style.filter=''}
+ try{
+  forLoop: for(let i=0;i<list.length;i++){
+   if(signal.aborted)break;
+   if(Date.now()-currentAtStart>180000){toast('This run reached the 3-minute safety limit. Press Run code to continue.');break}
+   const e=list[i],t=e.dataset.t,v=e.querySelector('input')?.value||'',times=t==='loop'?Math.min(10,Math.max(1,+v||3)):1;
+   e.style.outline='3px solid #ffd45c';$('stageText').textContent=`Instruction ${i+1} of ${list.length}`;
+   for(let j=0;j<times;j++){
+    if(signal.aborted)break forLoop;
+    try{window.TK3D?.action(t,v)}catch(animationError){console.warn('3D action failed; continuing.',animationError)}
+    if(t==='move'){pos=Math.max(5,Math.min(85,pos+dir*(+v||1)*8));$('hero').style.left=pos+'%';$('hero').style.transform=dir===1?'scaleX(1)':'scaleX(-1)';await sleep(300,signal)}
+    else if(t==='runfast'){dir=1;pos=Math.max(5,Math.min(88,pos+(+v||1)*13));$('hero').style.left=pos+'%';$('hero').style.transform='scaleX(1)';await sleep(220,signal)}
+    else if(t==='back'){pos=Math.max(5,Math.min(85,pos-dir*(+v||1)*8));$('hero').style.left=pos+'%';$('hero').style.transform=dir===1?'scaleX(1)':'scaleX(-1)';await sleep(300,signal)}
+    else if(t==='turn'){dir*=-1;$('hero').style.transform=dir===1?'scaleX(1)':'scaleX(-1)';await sleep(300,signal)}
+    else if(t==='jump'){beep('jump');$('hero').style.bottom='48%';await sleep(250,signal);if(!signal.aborted)$('hero').style.bottom='25%';await sleep(250,signal)}
+    else if(t==='say'){$('speech')?.remove();const b=document.createElement('div');b.id='speech';b.className='speech';b.textContent=v||'Hello!';$('stage').appendChild(b);beep('pop');await sleep(900,signal);b.remove()}
+    else if(t==='wait')await sleep(Math.min(5,+v||1)*400,signal)
+    else if(t==='grow'){$('hero').style.fontSize='100px';await sleep(400,signal)}
+    else if(t==='shrink'){$('hero').style.fontSize='36px';await sleep(500,signal)}
+    else if(t==='sound'){beep('funny');await sleep(250,signal)}
+    else if(t==='dance'){$('hero').style.animation='wiggle .45s ease-in-out 3';beep('funny');await sleep(1400,signal);$('hero').style.animation=''}
+    else if(t==='wave'){$('hero').style.animation='wave3d .5s ease-in-out 3';beep('funny');await sleep(1500,signal);$('hero').style.animation=''}
+    else if(t==='spin'){$('hero').style.animation='spinny 1s ease-in-out';beep('funny');await sleep(1000,signal);$('hero').style.animation=''}
+    else if(t==='party'||t==='cheer'){beep('party');$('stageText').textContent=t==='cheer'?'WOW! YOU DID IT! 👏🎉':'PARTY TIME!!! 🎉';$('hero').style.animation='wiggle .45s ease-in-out 3';await sleep(1400,signal);$('hero').style.animation=''}
+    else if(t==='rainbow'){$('stage').style.animation='rainbowflash 1s ease-in-out 3';beep('party');await sleep(3000,signal);$('stage').style.animation=''}
+    else if(t==='if'){dir=pos>75?-1:pos<10?1:-dir;pos=Math.max(12,Math.min(78,pos));$('hero').style.left=pos+'%';$('hero').style.transform=dir===1?'scaleX(1)':'scaleX(-1)';await sleep(300,signal)}
+    else if(t==='hide'){$('hero').style.opacity='0';$('stageText').textContent='Where did my friend go? 🫣';await sleep(600,signal)}
+    else if(t==='show'){$('hero').style.opacity='1';$('stageText').textContent='Peekaboo! Here I am! 👀';beep('pop');await sleep(600,signal)}
+    else if(t==='fly'){$('hero').style.bottom='62%';$('hero').style.animation='fly3d .6s ease-in-out 2';beep('jump');await sleep(1200,signal);$('hero').style.bottom='25%';$('hero').style.animation=''}
+    else if(t==='heart'){const b=document.createElement('div');b.className='effect-burst';b.textContent='💖 💛 💙';$('stage').appendChild(b);beep('win');await sleep(1100,signal);b.remove()}
+    else if(t==='color'){$('hero').style.filter='hue-rotate(170deg) drop-shadow(0 10px 3px #1d254c45)';beep('funny');await sleep(800,signal);$('hero').style.filter=''}
+   }
+   e.style.outline='none';
   }
-  e.style.outline='none'
+  if(signal.aborted)$('stageText').textContent='Program stopped. Ready for more code.';
+  else if(Date.now()-currentAtStart<=180000){$('stageText').textContent='Amazing coding! 🎉';beep('win');toast('You did it, little coder! ⭐')}
+ }catch(err){
+  console.error('The coding program encountered an error:',err);
+  toast('The program was interrupted. Your blocks are safe. Press Run code to try again.');
+ }finally{
+  running=false;if(currentRunController===controller)currentRunController=null;
+  $('run').disabled=false;$('run').textContent='▶ Run code!';$('stop').disabled=true;
+  document.querySelectorAll('.code').forEach(block=>block.style.outline='none');
+  $('hero').style.animation='';$('hero').style.filter='';$('stage').style.animation='';
+  $('speech')?.remove();document.querySelectorAll('.effect-burst').forEach(b=>b.remove());
+  try{window.TK3D?.action('idle','')}catch(e){}
  }
- running=false;$('run').textContent='▶ Run code!';$('stageText').textContent='Amazing coding! 🎉';beep('win');toast('You did it, little coder! ⭐')
 }
-$('run').onclick=run;
+function stopRun(){if(!running||!currentRunController)return;currentRunController.abort();$('stop').disabled=true;$('stageText').textContent='Stopping program…';toast('Stopping… you can add blocks as soon as the run ends.')}
+
+$('run').onclick=run;$('stop').onclick=stopRun;
 $('musicBtn').onclick=toggleMusic;$('soundBtn').onclick=toggleSounds;updateAudioButtons();
 function tryLandscapeLock(){try{if(screen.orientation&&screen.orientation.lock){const p=screen.orientation.lock('landscape');if(p&&p.catch)p.catch(()=>{})}}catch(e){}}
 tryLandscapeLock();window.addEventListener('load',tryLandscapeLock,{once:true});
